@@ -1,13 +1,6 @@
-#Prompt to start the game
-currentprompt = "Welcome to the game! (write the first prompt here for users )\n"
 gameison = True
 
-def promptresponse():
-    global resp
-    resp = input(currentprompt)
-
-
-#Define stages
+#Class to hold the stages
 class stage:
      def __init__(self, prompt, option1, option2, option3):
          self.prompt = prompt
@@ -15,6 +8,12 @@ class stage:
          self.option2 = option2
          self.option3 = option3
 
+gamestart = stage("Welcome to the game! (write the first prompt here for users )\n","stage1","stage2","stage3")
+currentstage = gamestart
+
+def promptresponse():
+    global resp
+    resp = input(currentstage.prompt)
 
 
 #loop that runs the game
